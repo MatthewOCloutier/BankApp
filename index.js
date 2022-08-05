@@ -1,9 +1,24 @@
 var express = require('express');
+require("dotenv").config();
 var app     = express();
 var cors    = require('cors');
-var dal     = require('./dal.js');
+const dal     = require('./dal.js');
 const e = require('express');
-
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics"
+// const firebaseConfig = {
+//     apiKey: "AIzaSyDdgPgF7wDOb1nEubXgwe7-wo_yApwHKr8",
+//     authDomain: "bankapp-e20d4.firebaseapp.com",
+//     projectId: "bankapp-e20d4",
+//     storageBucket: "bankapp-e20d4.appspot.com",
+//     messagingSenderId: "314215156902",
+//     appId: "1:314215156902:web:10ec1a70ff6b8a9bbb3867",
+//     measurementId: "G-9HEK36PDK8"
+//   };
+  
+  // Initialize Firebase
+//   const app = initializeApp(firebaseConfig);
+//   const analytics = getAnalytics(app);
 // used to serve static files from public directory
 app.use(express.static('public'));
 app.use(cors());
