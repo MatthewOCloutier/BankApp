@@ -5,7 +5,7 @@ let db            = null;
  
 console.log("url ==>", url);
 // connect to mongo
-MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion }, function(err, client) {
+MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, client) {
     if(err){
         console.log(err);
     }
