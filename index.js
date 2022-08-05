@@ -1,9 +1,9 @@
 var express = require('express');
 require("dotenv").config();
-var app     = express();
-var cors    = require('cors');
-const dal     = require('./dal.js');
-const e = require('express');
+var app = express();
+var cors = require('cors');
+const dal = require('./dal.js');
+// const e = require('express');
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics"
 // const firebaseConfig = {
@@ -15,17 +15,17 @@ const e = require('express');
 //     appId: "1:314215156902:web:10ec1a70ff6b8a9bbb3867",
 //     measurementId: "G-9HEK36PDK8"
 //   };
-  
-  // Initialize Firebase
+
+// Initialize Firebase
 //   const app = initializeApp(firebaseConfig);
 //   const analytics = getAnalytics(app);
 // used to serve static files from public directory
-// app.use(express.static('public'));
+app.use(express.static('public'));
 app.use(cors());
 
-app.get("/", (req, res)=>{
-    res.send("im working");
-})
+// app.get("/", (req, res)=>{
+//     res.send("im working");
+// })
 
 // create user account
 app.get('/account/create/:name/:email/:password', function (req, res) {
@@ -35,17 +35,17 @@ app.get('/account/create/:name/:email/:password', function (req, res) {
         then((users) => {
 
             // if user exists, return error message
-            if(users.length > 0){
+            if (users.length > 0) {
                 console.log('User already in exists');
-                res.send({'ldjf':"ldjf"});    
+                res.send({ 'ldjf': "ldjf" });
             }
-            else{
+            else {
                 // else create user
-                dal.create(req.params.name,req.params.email,req.params.password).
+                dal.create(req.params.name, req.params.email, req.params.password).
                     then((user) => {
                         console.log(user);
-                        res.send(user);            
-                    });            
+                        res.send(user);
+                    });
             }
 
         });
@@ -59,19 +59,19 @@ app.get('/account/login/:email/:password', function (req, res) {
         then((user) => {
 
             // if user exists, check password
-            if(user.length > 0){
-                if (user[0].password === req.params.password){
+            if (user.length > 0) {
+                if (user[0].password === req.params.password) {
                     res.send(user[0]);
                 }
-                else{
+                else {
                     res.send('Login failed: wrong password');
                 }
             }
-            else{
+            else {
                 res.send('Login failed: user not found');
             }
-    });
-    
+        });
+
 });
 
 // find user account
@@ -81,7 +81,7 @@ app.get('/account/find/:email', function (req, res) {
         then((user) => {
             console.log(user);
             res.send(user);
-    });
+        });
 });
 
 // find one user by email - alternative to find
@@ -91,12 +91,12 @@ app.get('/account/findOne/:email', function (req, res) {
         then((user) => {
             console.log(user);
             res.send(user);
-    });
+        });
 });
 
 
 // update - deposit/withdraw amount
-app.get('/account/update/:email/:amount', function(req, res) {
+app.get('/account/update/:email/:amount', function (req, res) {
 
     var amount = Number(req.params.amount);
 
@@ -104,7 +104,7 @@ app.get('/account/update/:email/:amount', function(req, res) {
         then((response) => {
             console.log(response);
             res.send(response);
-    }); 
+        });
 });
 // app.get('account/update/:email/:amount', function(req,res)  {
 //     dal.update(req.params.email, req.params.amount)
@@ -121,9 +121,9 @@ app.get('/account/all', function (req, res) {
         then((docs) => {
             console.log(docs);
             res.send(docs);
-    });
+        });
 });
 
-var port = 3000;
+var port = process.env.PORT || 3000;
 app.listen(port);
 console.log('Running on port: ' + port);
