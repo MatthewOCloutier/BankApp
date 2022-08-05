@@ -20,8 +20,12 @@ const e = require('express');
 //   const app = initializeApp(firebaseConfig);
 //   const analytics = getAnalytics(app);
 // used to serve static files from public directory
-app.use(express.static('public'));
+// app.use(express.static('public'));
 app.use(cors());
+
+app.get("/", (req, res)=>{
+    res.send("im working");
+})
 
 // create user account
 app.get('/account/create/:name/:email/:password', function (req, res) {
