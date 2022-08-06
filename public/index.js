@@ -6,9 +6,7 @@ function Spa(props) {
   const [show, setShow] = React.useState(true);
   const [page, setPage] = React.useState(false);
 
-  //  function Login(){
-  //   return setPage (true);
-  //  }
+
   function logIn() {
     setCount(1);
 

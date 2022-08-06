@@ -8,6 +8,7 @@ const information = React.useState(ctx)
 console.log(information);
  let name = information[0].users[0].name;
   console.log(name);
+  let balance = information[0].users[0].balance;
      let setNav =  props.count;
 console.log(setNav);
     return(
@@ -50,7 +51,7 @@ console.log(setNav);
             </ul>   
             <ul className="navbar-nav ml-auto">
               <li className="nav-item" status={status}>
-                <a className="nav-link" href="#/logout/">{name}</a>
+                <a className="nav-link" href="#/logout/">{name} <br/> ${balance}</a>
               </li>
             </ul>            
             </>

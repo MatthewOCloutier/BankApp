@@ -7,7 +7,7 @@ function Deposit(props) {
   return (
     <Card
       bgcolor="warning"
-      header="Deposit"
+      header="Transactions"
       status={status}
       body={show ? (
           <DepositForm
@@ -71,7 +71,33 @@ function DepositMsg(props) {
     
 console.log(balance);
 props.setShow(false);
-}    
+}   
+function withdraw(){
+  console.log(deposit, balance);   
+    const url = `account/findone/${email}`;
+    (async () => {
+      //find current balance
+      let resFind = await fetch(url);
+      console.log(resFind);
+      let dataFind = await resFind.json();
+      console.log(dataFind);
+      let currentBalance = dataFind.balance;  
+      console.log(currentBalance);      
+      let newBalance = Number(currentBalance) - Number(deposit); 
+      ctx.users[0].balance = newBalance;
+      console.log(newBalance);
+      //update current balance
+      const urlUpdate = `account/update/${email}/${newBalance}`;
+      let resDeposit = await fetch(urlUpdate);
+      let dataDeposit = await resDeposit.json(); 
+      console.log(dataDeposit);
+      console.log(newBalance);
+    
+    })();  
+    console.log(balance);
+props.setShow(false);
+    
+} 
 console.log(balance);
   return (
     <>
@@ -91,7 +117,10 @@ console.log(balance);
       />
       <br />
       <button type="submit" className="btn btn-light" onClick={handle}>
-        Process Funds
+       Deposit
+      </button>
+      <button type="submit" className="btn btn-light" onClick={withdraw}>
+        Withdraw
       </button>
     </>
   );
