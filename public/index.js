@@ -18,21 +18,6 @@ function Spa(props) {
     handle(props);
   }
 
-  //   function getUser(){
-  //     React.useEffect(() => {
-
-  //       // fetch all accounts from API
-  //       fetch('/account/all')
-  //           .then(response => response.json())
-  //           .then(data => {
-  //               console.log(data[0]);
-  //               setData(JSON.stringify(data));
-  //           });
-
-  //   }, []);
-  // setCurrentUser(getUser);
-  // console.log(data[0]);
-  // }
   return (
 
 
