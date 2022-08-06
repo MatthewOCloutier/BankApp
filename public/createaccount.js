@@ -4,8 +4,6 @@ function CreateAccount(props) {
   const [show, setShow] = React.useState(true);
   const [status, setStatus] = React.useState('');
   const [information, setInformation] = React.useState('');
-//  console.log(props.currentUser);
- 
   console.log(information);
   let setNav = props.logIn;
   let setUser = props.logIn;

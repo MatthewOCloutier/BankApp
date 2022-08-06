@@ -16,7 +16,6 @@ function Withdraw(){
 
 function WithdrawMsg(props){
   const ctx = React.useContext(UserContext);
-  // const balance = React.useContext(ctx);
   let newBalance = props.setBalance;
   return(<>
     <h5>Success</h5>

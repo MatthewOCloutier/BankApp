@@ -44,8 +44,6 @@ function findOne(email){
         const customers = db
             .collection('users')
             .findOne({email: email},
-            // .then((doc) => resolve(doc))
-            // .catch((err) => reject(err));    
             function (err, res){
                 err ? reject(err) : resolve(res);
                 console.log(`Found balance: ${res.balance}`);
