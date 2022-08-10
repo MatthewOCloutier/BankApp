@@ -8,14 +8,6 @@ function Spa(props) {
   const [page, setPage] = React.useState(false);
   const [balance, setBalance] = React.useState('');
 
-  // let url = '/account/update/:email/:amount';
-  // const userBalance =(async()=>{
-  //   let balanceSearch = await fetch(url);
-  //   let userBalance = await balanceSearch.json();
-   
-  //   return userBalance;
-  // })
-  // setBalance(userBalance);
 
 
   function logIn() {
