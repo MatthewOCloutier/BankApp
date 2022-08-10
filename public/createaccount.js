@@ -74,7 +74,7 @@ info = ctx;
         console.log(thisEmail);
         props.logIn();
         props.setShow(false)
-        props.setStatus("udrt");
+        props.setStatus("");
       } else {
         props.setStatus("user exists");
         console.log(info);
