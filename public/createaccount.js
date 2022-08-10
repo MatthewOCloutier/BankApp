@@ -54,11 +54,10 @@ function CreateForm(props) {
         async function getData() {       
       var findings = await fetch(url);
       let info = [];
-      info = await findings.json();
+     info = await findings.json();
       console.log(info);
-      let thisUser = info.name;
-      
       console.log(thisUser);
+      let thisUser = info.name;
       let thisPassword = info.password;
       let thisBalance = info.balance;
       let thisEmail = info.email; 
@@ -75,12 +74,12 @@ info = ctx;
         console.log(thisEmail);
         props.logIn();
         props.setShow(false)
-        props.setStatus(thisUser);
+        props.setStatus("udrt");
       } else {
-        props.setStatus();
+        props.setStatus("user exists");
         console.log(info);
        
-        props.setShow(true);
+        props.setShow('');
       }
 
       return info;

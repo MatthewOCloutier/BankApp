@@ -75,7 +75,7 @@ function handle(){
     let thisEmail = info.email;
       console.log(info);
 
-      if (thisPassword == info.password){
+      if (thisPassword == password){
         console.log("pwrd 👍")
       
         ctx.users[0].name = thisUser;
@@ -92,6 +92,7 @@ function handle(){
         props.setStatus('user not found');
         setEmail('');
         setPassword('');
+        console.log(_err);
        return
       }
       return info;

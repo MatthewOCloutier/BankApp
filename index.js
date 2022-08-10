@@ -18,8 +18,8 @@ app.get('/account/create/:name/:email/:password', function (req, res) {
 
             // if user exists, return error message
             if(users.length > 0){
-                console.log('User already in exists');
-                res.send({'ldjf':"ldjf"});    
+                console.log('User already exists');
+                res.send("user exists");    
             }
             else{
                 // else create user
@@ -88,7 +88,7 @@ app.get('/account/update/:email/:amount', function(req, res) {
             res.send(response);
     }); 
 });
-// app.get('account/update/:email/:amount', function(req,res)  {
+
 //     dal.update(req.params.email, req.params.amount)
 //         .then((user) => {
 //             console.log(user);

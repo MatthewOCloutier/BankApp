@@ -1,6 +1,4 @@
-
-  function NavBar(props){
-  // const [show, setShow] = React.useState(false);
+ function NavBar(props){
      const ctx = React.useContext(UserContext);
       const [status, setStatus] = React.useState({});
    console.log(ctx.users);  
@@ -9,7 +7,9 @@ console.log(information);
  let name = information[0].users[0].name;
   console.log(name);
   let balance = information[0].users[0].balance;
+  console.log(balance)
      let setNav =  props.count;
+
 console.log(setNav);
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,7 +51,7 @@ console.log(setNav);
             </ul>   
             <ul className="navbar-nav ml-auto">
               <li className="nav-item" status={status}>
-                <a className="nav-link" href="#/logout/">{name} <br/> ${balance}</a>
+                <a className="nav-link" href="#/logout/">{name} </a>
               </li>
             </ul>            
             </>

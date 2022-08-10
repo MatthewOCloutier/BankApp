@@ -29,6 +29,7 @@ function DepositMsg(props) {
         onClick={() => {
           props.setShow(true);
           props.setStatus("");
+          props.setUser(balance);
         }}
         >
         See Balance/Access Funds
@@ -45,7 +46,7 @@ function DepositMsg(props) {
           console.log(ctx);
           console.log(ctx.users[0].email);
           console.log(balance);
-         
+         let setNavBalance = props.setUser;
                   function handle(){
     console.log(deposit, balance);   
     const url = `account/findone/${email}`;
@@ -96,6 +97,7 @@ function withdraw(){
     })();  
     console.log(balance);
 props.setShow(false);
+props.setUser;
     
 } 
 console.log(balance);
