@@ -4,43 +4,43 @@ var app     = express();
 var cors    = require('cors');
 const dal     = require('./dal.js');
 const e = require('express');
-const swaggerJsDoc = require('swagger-jsdoc');
-const swaggerUI = require('swagger-ui-express');
-var bodyParser = require('body-parser');
-const swaggerDocument = require('./swagger.json');
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+// const swaggerJsDoc = require('swagger-jsdoc');
+// const swaggerUI = require('swagger-ui-express');
+// var bodyParser = require('body-parser');
+// const swaggerDocument = require('./swagger.json');
+// app.use(bodyParser.urlencoded({extended: false}));
+// app.use(bodyParser.json());
 // used to serve static files from public directory
 app.use(express.static('public'));
 app.use(cors());
 
-const swaggerOptions = {
-    swaggerDefinition: {
-        info: {
-            title: 'Badbank API',
-            version: '1.0.0'
-        }
-    },
-    apis: ['index.js']
-};
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
+// const swaggerOptions = {
+//     swaggerDefinition: {
+//         info: {
+//             title: 'Badbank API',
+//             version: '1.0.0'
+//         }
+//     },
+//     apis: ['index.js']
+// };
+// const swaggerDocs = swaggerJsDoc(swaggerOptions);
+// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
-/**
- * @swagger
- * /account/create/:name/:email/:passsword:
- *   post:
- *     description: create user account
- *     parameters:
- *     - name: users
- *       description: user we want to create
- *       in: body
- *       schema:
- *         JSON-ref: #swagger.json/definitions/user              
- *     responses:
- *          200:
- *             description: success
- */
+// /**
+//  * @swagger
+//  * /account/create/:name/:email/:passsword:
+//  *   post:
+//  *     description: create user account
+//  *     parameters:
+//  *     - name: users
+//  *       description: user we want to create
+//  *       in: body
+//  *       schema:
+//  *         JSON-ref: #swagger.json/definitions/user              
+//  *     responses:
+//  *          200:
+//  *             description: success
+//  */
                 
         // create user account
             app.get('/account/create/:name/:email/:password', function (req, res) {
@@ -123,15 +123,15 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
             }); 
         });
         
-        /**
-         *  @swagger 
-         * /account/all: 
-         *     get:
-         *       description: all users
-         *       responses:
-         *          200:
-         *            description: success
-         */
+        // /**
+        //  *  @swagger 
+        //  * /account/all: 
+        //  *     get:
+        //  *       description: all users
+        //  *       responses:
+        //  *          200:
+        //  *            description: success
+        //  */
 
 // all accounts
 app.get('/account/all', function (req, res) {
