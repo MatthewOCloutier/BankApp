@@ -46,7 +46,7 @@ function DepositMsg(props) {
           console.log(ctx);
           console.log(ctx.users[0].email);
           console.log(balance);
-         let setNavBalance = props.setUser;
+        
                   function handle(){
     console.log(deposit, balance);   
     const url = `account/findone/${email}`;

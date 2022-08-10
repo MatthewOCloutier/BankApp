@@ -10,12 +10,16 @@
   "author": "abel@mit.edu",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "cors": "^2.8.4",
     "dotenv": "^16.0.1",
     "express": "^4.16.3",
     "firebase": "^9.9.2",
     "lowdb": "^1.0.0",
     "mongodb": "^3.6.2",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "swagger": "^0.7.5",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.5.0"
   }
 }
